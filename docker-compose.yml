@@ -1,0 +1,62 @@
+version: '2'
+services:
+  api1:
+    build: src/.
+    command: npm run start-dev
+    environment:
+      NODE_ENV: development
+      PORT: 5555
+      TARGET_PORTS: 5555,5556,5557,5558,5559
+    ports:
+      - '5555:5555'
+    volumes:
+      - ./src/.:/opt/app
+      - /opt/app/node_modules
+  api2:
+    build: src/.
+    command: npm run start-dev
+    environment:
+      NODE_ENV: development
+      PORT: 5556
+      TARGET_PORTS: 5555,5556,5557,5558,5559
+    ports:
+      - '5556:5556'
+    volumes:
+      - ./src/.:/opt/app
+      - /opt/app/node_modules
+  api3:
+    build: src/.
+    command: npm run start-dev
+    environment:
+      NODE_ENV: development
+      PORT: 5557
+      TARGET_PORTS: 5555,5556,5557,5558,5559
+    ports:
+      - '5557:5557'
+    volumes:
+      - ./src/.:/opt/app
+      - /opt/app/node_modules
+  api4:
+    build: src/.
+    command: npm run start-dev
+    environment:
+      NODE_ENV: development
+      PORT: 5558
+      TARGET_PORTS: 5555,5556,5557,5558,5559
+    ports:
+      - '5558:5558'
+    volumes:
+      - ./src/.:/opt/app
+      - /opt/app/node_modules
+  api5:
+    build: src/.
+    command: npm run start-dev
+    environment:
+      NODE_ENV: development
+      PORT: 5559
+      TARGET_PORTS: 5555,5556,5557,5558,5559
+    ports:
+      - '5559:5559'
+    volumes:
+      - ./src/.:/opt/app
+      - /opt/app/node_modules
